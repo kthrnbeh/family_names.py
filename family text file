@@ -1,0 +1,64 @@
+#Make a a family text file 
+import csv
+#jan,feb,mar,apr,may,jun,july,aug,sept,oct,nov,dec.
+    #make family list for the csv file
+family = [
+    {'givenname': 'Marilee', 'surnames': 'Beh', 'parent': 'The grandma', 'relationship': 'Mom/grandma', 'birthday': '11-12-1957'}, 
+    {'givenname': 'Gordon', 'surnames': 'Beh', 'parent': '', 'relationship': '', 'birthday': '07-16-1952'},
+    {'givenname': 'Casey', 'surnames': 'Hyatt', 'parent': 'Marilee Beh', 'relationship': 'half-sister', 'birthday': '11-01-1978'},
+    {'givenname': 'Jared', 'surnames': 'Beh', 'parent': 'Marilee Beh', 'relationship': 'brother', 'birthday': '04-23-1981'},
+    {'givenname': 'Hope', 'surnames': 'Orton', 'parent': 'Marilee Beh', 'relationship': 'sister', 'birthday': '12-31-1982'},
+    {'givenname': 'Isaiah', 'surnames': 'Beh', 'parent': 'Marilee Beh', 'relationship': 'brother', 'birthday': '12-11-1984'},
+    {'givenname': 'Abraham', 'surnames': 'Beh', 'parent': 'Marilee Beh', 'relationship': 'brother', 'birthday': '02-05-1987'},
+    {'givenname': 'Jonathan', 'surnames': 'Beh', 'parent': 'Marilee Beh', 'relationship': 'brother', 'birthday': '02-05-1987'},
+    {'givenname': 'Isreal', 'surnames': 'Beh', 'parent': 'Marilee Beh', 'relationship': 'brother', 'birthday': '08-25-1988'},
+    {'givenname': 'Katherine', 'surnames': 'Magistri', 'parent': 'Marilee Beh', 'relationship': 'self', 'birthday': '10-10-1989'},
+    {'givenname': 'Rachel', 'surnames': 'Beuhner', 'parent': 'Marilee Beh', 'relationship': 'sister', 'birthday': '07-27-1992'},
+    {'givenname': 'Martha', 'surnames': 'Jenkins', 'parent': 'Marilee Beh', 'relationship': 'sister', 'birthday': '08-06-1994'},
+    {'givenname': 'Mary', 'surnames': 'Lieshman', 'parent': 'Marilee Beh', 'relationship': 'sister', 'birthday': '10-31-1996'},
+    {'givenname': 'Ammon', 'surnames': 'Beh', 'parent': 'Marilee Beh', 'relationship': 'brother', 'birthday': '10-03-1998'},
+    {'givenname': 'Matthew', 'surnames': 'Beh', 'parent': 'Marilee Beh', 'relationship': 'brother', 'birthday': '01-10-2001'},
+    {'givenname': 'Mark', 'surnames': 'Beh', 'parent': 'Marilee Beh', 'relationship': 'brother', 'birthday': '01-10-2001'},
+    {'givenname': 'Roselyn', 'surnames': 'Beh', 'parent': 'Marilee Beh', 'relationship': 'sister', 'birthday': '02-01-2005'},
+    {'givenname': 'Gabriel', 'surnames': 'Beh', 'parent': 'Gordon Beh', 'relationship': 'half-brother', 'birthday': '04-24-1991'},
+    {'givenname': 'Mosiah', 'surnames': 'Beh', 'parent': 'Gordon Beh', 'relationship': 'half-brother', 'birthday': '09-08-1993'},
+    {'givenname': 'Justice', 'surnames': 'Beh', 'parent': 'Gordon Beh', 'relationship': 'half-brother', 'birthday': '09-11-1995'},
+    {'givenname': 'Alma', 'surnames': 'Beh', 'parent': 'Gordon Beh', 'relationship': 'half-brother', 'birthday': '03-05-1998'},
+    {'givenname': 'Patience', 'surnames': 'Beh', 'parent': 'Gordon Beh', 'relationship': 'half-sister', 'birthday': '10-01-2001'},
+    {'givenname': 'Hannah', 'surnames': 'Hyatt', 'parent': 'Casey Hyatt', 'relationship': 'Niece', 'birthday': '03-23-2011'},
+    {'givenname': 'Daniel', 'surnames': 'Beh', 'parent': 'Jared Beh', 'relationship': 'nephew', 'birthday': '09-08-2012'},
+    {'givenname': 'Grace', 'surnames': 'Nelson', 'parent': 'Gordon Beh', 'relationship': 'half-sister', 'birthday': '07-18-1987'},
+    {'givenname': 'Jonathan Edward', 'surnames': 'Beh', 'parent': 'Jared Beh', 'relationship': 'nephew', 'birthday': '04-30-2015'},
+    {'givenname': 'Nathaniel', 'surnames': 'Beh', 'parent': 'Jared Beh', 'relationship': 'nephew', 'birthday': '11-12-2012'},
+    {'givenname': 'Harris', 'surnames': 'Orton', 'parent': 'Hope Orton', 'relationship': 'nephew', 'birthday': '10-28-2010'},
+    {'givenname': 'Brooks', 'surnames': 'Orton', 'parent': 'Hope Orton', 'relationship': 'nephew', 'birthday': '08-16-2012'},
+    {'givenname': 'Grant', 'surnames': 'Beh', 'parent': 'Abraham Beh', 'relationship': 'nephew', 'birthday': '06-11-2007'},
+    {'givenname': 'aiden', 'surnames': 'Beh', 'parent': 'Abraham Beh', 'relationship': '', 'birthday': ''},
+    {'givenname': 'Allister', 'surnames': 'Magistri', 'parent': 'Katherine Magistri', 'relationship': 'Son', 'birthday': '03-07-2013'}
+    {'givenname': 'Julia', 'surnames': 'Magistri', 'parent': 'Katherine Magistri', 'relationship': 'Daughter', 'birthday': '01-03-2015'}   
+    {'givenname': 'Maggie', 'surnames': ''Magistri, 'parent': 'Katherine Magistri', 'relationship': 'Daughter', 'birthday': '05-28-2017'}   
+    {'givenname': 'Grayson', 'surnames': 'Magistri', 'parent': 'Katherine Magistri', 'relationship': 'son', 'birthday': '03-31-2021'}   
+    {'givenname': 'Sawyer', 'surnames': 'Beh', 'parent': 'Jonathan Beh', 'relationship': 'nephew', 'birthday': '07-29-2015'}
+    {'givenname': 'Luke', 'surnames': 'Buehner', 'parent': 'Rachel Beuhner', 'relationship': 'nephew', 'birthday': '06-18-2015'}
+    {'givenname': 'Ruth', 'surnames': 'Buehner', 'parent': 'Rachel Buehner', 'relationship': 'niece', 'birthday': '05-17-2017'} 
+    {'givenname': 'Brooklyn', 'surnames': 'Buehner', 'parent': 'Rachel Buehner', 'relationship': 'niece', 'birthday': '03-29-2019'} 
+    {'givenname': 'Eve', 'surnames': 'Beuhner', 'parent': 'Rachel Buehner', 'relationship': 'niece', 'birthday': ''}  
+    {'givenname': 'Eden', 'surnames': 'Buehner', 'parent': 'Rachel Buehner', 'relationship': 'niece', 'birthday': ''}  
+
+
+
+
+]
+#Create a new csv file. # the mode='w' tells that you can write a new csv.
+with open ('family_ties.csv',mode='w',newline='') as csvfile:
+    #create the columns that you want  
+    feildnames= family[0].keys
+    #writer object, pass in csvfile and feildnames
+    writer=csv.DictWriter(csvfile,feildnames)
+    #write our header 
+    writer.writeheader()
+    #iterates through the document
+    writer.writerows(family)
+
+  
+
